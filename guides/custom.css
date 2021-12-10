@@ -1,0 +1,10 @@
+#notebook-container {
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+div.prompt.output_prompt {
+    display: none;
+}
+div.prompt.input_prompt {
+  display: none;
+}

@@ -1,0 +1,102 @@
+plugins {
+  id 'java'
+  id "com.diffplug.spotless" version "5.16.0"
+  id 'jacoco'
+  id 'eclipse'
+}
+
+defaultTasks 'spotlessApply', 'build', 'jacocoTestReport'
+
+repositories {
+  mavenCentral()
+}
+
+sourceSets {
+  scratch {
+    java { srcDirs = [ 'src/scratch/java' ] }
+    compileClasspath += sourceSets.main.output
+    runtimeClasspath += sourceSets.main.output
+  }
+}
+
+configurations {
+  scratchImplementation.extendsFrom implementation
+  scratchImplementation.setCanBeResolved(true)
+  scratchRuntimeOnly.extendsFrom runtimeOnly
+  umlDoclet
+}
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+  testImplementation 'org.hamcrest:hamcrest:2.2'
+  umlDoclet 'nl.talsmasoftware:umldoclet:2.0.12'
+}
+
+eclipse {
+  classpath {
+    plusConfigurations += [ configurations.scratchImplementation ]
+  }
+}
+
+test {
+  useJUnitPlatform {
+    if (project.hasProperty("tags")) {
+        includeTags project.tags
+    }
+  }
+  testLogging {
+    events 'passed', 'skipped', 'failed'
+  }
+  finalizedBy jacocoTestReport
+}
+
+task runClass(type: JavaExec) {
+  dependsOn build
+  group = 'Execution'
+  description = 'Runs the main method of a class given by its fully qualified name.'
+  mainClass = project.hasProperty('mainClass') ? getProperty('mainClass') : 'my.pkg.Example'
+  classpath = sourceSets.main.runtimeClasspath + sourceSets.scratch.runtimeClasspath
+}
+
+javadoc {
+  options.docTitle = 'Programmazione II @ UniMI'
+  options.overview = 'src/overview.html'
+  options.links = [ 'https://docs.oracle.com/en/java/javase/17/docs/api/' ]
+  options.showFromPrivate()
+  options.header = '<script type=\'text/javascript\' src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\'></script>'
+  options.addBooleanOption('-allow-script-in-comments', true)
+  javadoc.options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+task UMLJavadoc(type: Javadoc) {
+  group = 'Documentation'
+  description = 'Generates Javadoc API documentation and UML diagrams for the main source code.'
+  source = sourceSets.main.allJava
+  classpath = sourceSets.main.compileClasspath
+  destinationDir = file("${buildDir}/docs/umljavadoc")
+  options.showFromPrivate()
+  options.docletpath = configurations.umlDoclet.files.asType(List)
+  options.doclet = 'nl.talsmasoftware.umldoclet.UMLDoclet'
+  options.addStringOption 'umlImageDirectory', 'images'
+  options.addStringOption 'umlImageFormat', 'svg,png'
+}
+
+spotless {
+  enforceCheck false
+  java {
+    googleJavaFormat('1.11.0')
+    removeUnusedImports()
+    /* indentWithTabs(2) see https://github.com/diffplug/spotless/issues/317 */
+    indentWithSpaces(2)
+    endWithNewline()
+    licenseHeaderFile 'src/licenseHeaderFile.txt'
+  }
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/Main*'])
+        }))
+    }
+}

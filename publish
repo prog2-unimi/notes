@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for g in guides/*.ipynb; do
+  guide=$(basename $g .ipynb)
+  if [ $guide = Test ]; then continue; fi
+  echo "Converting $guide..."
+  if grep -q '"mimetype": "text/x-java-source"' "./guides/${guide}.ipynb"; then
+    jupyter nbconvert --execute --ExecutePreprocessor.allow_errors=True --to html "./guides/${guide}.ipynb" --template classic
+  else
+    jupyter nbconvert --execute --no-prompt --no-input --to html "./guides/${guide}.ipynb" --template classic
+  fi
+  sed -i -e 's|</html>|<link href="custom.css" rel="stylesheet"></html>|' "./guides/${guide}.html"
+  cp -f "./guides/${guide}.html" ../sito/guides
+done
