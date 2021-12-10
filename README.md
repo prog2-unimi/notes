@@ -5,7 +5,7 @@
 
 Questo repository le seguenti *note* di approfondimento riguardanti l'insegnamento di [Programmazione II](https://prog2.di.unimi.it/) del corso di laurea in [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi di Milano](http://www.unimi.it/):
 
-* [Ereditarietà a carattere ontologico](https://prog2-unimi.github.io/notes/OntologyAndInheritance.html);
-* [Uguaglianza ed ereditarietà](https://prog2-unimi.github.io/notes/EqualityAndInheritance.html);
-* [Ereditarietà, composizione e delega](https://prog2-unimi.github.io/notes/CompositionAndInheritance.html);
-* [Tipi generici e relazioni di sottotipo](https://prog2-unimi.github.io/notes/GenericsAndSubtyping.html).
+* [Ereditarietà a carattere ontologico](https://prog2-unimi.github.io/notes/EACO.html);
+* [Uguaglianza ed ereditarietà](https://prog2-unimi.github.io/notes/UEE.html);
+* [Ereditarietà, composizione e delega](https://prog2-unimi.github.io/notes/CED.html);
+* [Tipi generici e relazioni di sottotipo](https://prog2-unimi.github.io/notes/TGERDS.html).

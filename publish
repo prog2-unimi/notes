@@ -2,15 +2,15 @@
 
 gradle spotlessApply build
 mkdir -p ./docs
-for g in guides/*.ipynb; do
-  guide=$(basename $g .ipynb)
-  if [ $guide = Test ]; then continue; fi
-  echo "Converting $guide..."
-  if grep -q '"mimetype": "text/x-java-source"' "./guides/${guide}.ipynb"; then
-    jupyter nbconvert --execute --ExecutePreprocessor.allow_errors=True --to html "./guides/${guide}.ipynb" --template classic
+for g in notes/*.ipynb; do
+  note=$(basename $g .ipynb)
+  if [ $note = Test ]; then continue; fi
+  echo "Converting $note..."
+  if grep -q '"mimetype": "text/x-java-source"' "./notes/${note}.ipynb"; then
+    jupyter nbconvert --execute --ExecutePreprocessor.allow_errors=True --to html "./notes/${note}.ipynb" --template classic
   else
-    jupyter nbconvert --execute --no-prompt --no-input --to html "./guides/${guide}.ipynb" --template classic
+    jupyter nbconvert --execute --no-prompt --no-input --to html "./notes/${note}.ipynb" --template classic
   fi
-  sed -i -e 's|</html>|<link href="custom.css" rel="stylesheet"></html>|' "./guides/${guide}.html"
-  mv -f "./guides/${guide}.html" ./docs
+  sed -i -e 's|</html>|<link href="custom.css" rel="stylesheet"></html>|' "./notes/${note}.html"
+  mv -f "./notes/${note}.html" ./docs
 done
