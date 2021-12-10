@@ -13093,10 +13093,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Ontology-&amp;-Inheritance">Ontology &amp; Inheritance<a class="anchor-link" href="#Ontology-&amp;-Inheritance">&#182;</a></h1><p>Una delle motivazioni con cui il concetto di <em>ereditarietà</em> viene presentato (e spesso l'unico genere di esempio che lo riguarda) ha a che fare con entità che, nella realtà, sono in una relazione di <em>più specifico</em>/<em>meno specifico</em> o di "<em>è un</em>" (<em>is a</em>), ossia in cui l'ereditarietà è vista dal punto di vista ontologico.</p>
+<h1 id="Ereditariet%C3%A0-a-carattere-ontologico">Ereditariet&#224; a carattere ontologico<a class="anchor-link" href="#Ereditariet%C3%A0-a-carattere-ontologico">&#182;</a></h1><p>Una delle motivazioni con cui il concetto di <em>ereditarietà</em> viene presentato (e spesso l'unico genere di esempio che lo riguarda) ha a che fare con entità che, nella realtà, sono dal punto di vista ontologico in una relazione di <em>più specifico</em>/<em>meno specifico</em> o di "<em>è un</em>" (<em>is a</em>), ossia in cui l'ereditarietà è vista dal punto di vista ontologico.</p>
 <p>Uno degli esempi più classici è tratto dalla geometria e si basa sul fatto che le varie figure piane (cerchi, rettangoli, quadrati…) sono tutte esempi di un'entità più generica che è, appunto, la figura piana. In tale contesto si fa spesso l'esempio del <strong>quadrato</strong> come sottotipo di <strong>rettangolo</strong> (in simboli <em>quadrato</em> $\prec$ <em>rettangolo</em>): tutti i quadrati, infatti, sono a ben vedere dei rettangoli (che hanno la base uguale all'altezza), ma non è vero il viceversa.</p>
 <p>Nell'ambito dei <em>tipi di dato astratti</em> però, abbiamo visto che l'<em>estensione</em> è di solito sviluppata nella direzione opposta: il rettangolo ha infatti un attributo in più (l'altezza) del quadrato (che è identificato dalla sola base).</p>
-<p>Risulta molto naturale infatti scrivere il tipo <code>Square</code> con un solo attributo</p>
+<p>Risulta molto naturale infatti scrivere il tipo <code>Square</code> con un solo attributo</p>
 
 </div>
 </div>
@@ -13828,8 +13828,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;Error: Could not find or load main class it.unimi.di.prog2.guides.oi.MainSR&#39;,
- &#39;Caused by: java.lang.ClassNotFoundException: it.unimi.di.prog2.guides.oi.MainSR&#39;]</pre>
+<pre>[&#39;[WrongFigures.Rectangle: base = 3, height = 3, WrongFigures.Rectangle: base = 4, height = 4]&#39;,
+ &#39;[WrongFigures.Rectangle: base = 6, height = 3, WrongFigures.Rectangle: base = 4, height = 4]&#39;,
+ &#39;[Square, base = 3, Square, base = 4]&#39;,
+ &#39;[Square, base = 6, Square, base = 4]&#39;]</pre>
 </div>
 
 </div>

@@ -5,7 +5,7 @@
 
 Questo repository le seguenti *guide* di approfondimento riguardanti l'insegnamento di [Programmazione II](https://prog2.di.unimi.it/) del corso di laurea in [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi di Milano](http://www.unimi.it/):
 
-* [Ontology and Inheritance](https://prog2-unimi.github.io/guides/OntologyAndInheritance.html);
-* [Equality and Inheritance](https://prog2-unimi.github.io/guides/EqualityAndInheritance.html);
-* [Composition and Inheritance](https://prog2-unimi.github.io/guides/CompositionAndInheritance.html);
-* [Generics and Subtyping](https://prog2-unimi.github.io/guides/Generics and Subtyping.html).
+* [Ereditarietà a carattere ontologico](https://prog2-unimi.github.io/guides/OntologyAndInheritance.html);
+* [Uguaglianza ed ereditarietà](https://prog2-unimi.github.io/guides/EqualityAndInheritance.html);
+* [Ereditarietà e composizione](https://prog2-unimi.github.io/guides/CompositionAndInheritance.html);
+* [Tipi generici e relazioni di sottotipo](https://prog2-unimi.github.io/guides/GenericsAndSubtyping.html).
