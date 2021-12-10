@@ -9,7 +9,7 @@ from IPython.display import HTML
 
 CURRENT_BRANCH = 'master'
 BASE_DIR = '../src/main/java/'
-BASE_URL = f'https://github.com/prog2-unimi/notes/blob/{CURRENT_BRANCH}/src/'
+BASE_URL = f'https://github.com/prog2-unimi/notes/blob/{CURRENT_BRANCH}/src/main/java/'
 
 def find(fragment, lines):
     oc = 0
