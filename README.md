@@ -7,5 +7,5 @@ Questo repository le seguenti *note* di approfondimento riguardanti l'insegnamen
 
 * [Ereditarietà a carattere ontologico](https://prog2-unimi.github.io/notes/EACO.html);
 * [Uguaglianza ed ereditarietà](https://prog2-unimi.github.io/notes/UEE.html);
-* [Ereditarietà, composizione e delega](https://prog2-unimi.github.io/notes/CED.html);
+* [Composizione e delega](https://prog2-unimi.github.io/notes/CED.html);
 * [Tipi generici e relazioni di sottotipo](https://prog2-unimi.github.io/notes/TGERDS.html).
