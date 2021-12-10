@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p ./docs
 for g in guides/*.ipynb; do
   guide=$(basename $g .ipynb)
   if [ $guide = Test ]; then continue; fi
@@ -10,5 +11,5 @@ for g in guides/*.ipynb; do
     jupyter nbconvert --execute --no-prompt --no-input --to html "./guides/${guide}.ipynb" --template classic
   fi
   sed -i -e 's|</html>|<link href="custom.css" rel="stylesheet"></html>|' "./guides/${guide}.html"
-  cp -f "./guides/${guide}.html" ../sito/guides
+  mv -f "./guides/${guide}.html" ./docs
 done
