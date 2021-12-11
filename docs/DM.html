@@ -13183,7 +13183,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In alcuni casi il numero di conversioni è zero (come nelle prime due invocazioni seguenti), mentre in altri (la terza invocazione) è possibile effettuare una conversione (da <code>float</code> a <code>double</code>) e non c'è ambiguità.</p>
+<p>In alcuni casi il numero di conversioni è zero</p>
 
 </div>
 </div>
@@ -13196,7 +13196,6 @@ div#notebook {
 <div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span> <span class="n">o</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Overload</span><span class="p">();</span>
 <span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>  <span class="c1">// 1.0 è un double, nessuna conversione</span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">);</span> <span class="c1">// 1.0f è un float, una conversione</span>
 </pre></div>
 
     </div>
@@ -13215,7 +13214,45 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overload::f(int)
 Overload::f(double)
-Overload::f(double)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>mentre in altri è sufficiente effettuare una conversione (da <code>float</code> a <code>double</code>) e non ci sono altre possibilità</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">);</span> <span class="c1">// 1.0f è un float, una conversione</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overload::f(double)
 </pre>
 </div>
 </div>
@@ -13234,7 +13271,7 @@ Overload::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Overload</span> <span class="p">{</span>
@@ -13255,14 +13292,14 @@ Overload::f(double)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Usando due <code>int</code> entrambe i metodi sono invocabili con una conversione (del primo, o del secondo argomento)</p>
+<p>Usando due <code>int</code> entrambe i metodi sono invocabili con una conversione a <code>double</code> (del primo, o del secondo argomento)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span> <span class="n">o</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Overload</span><span class="p">();</span>
@@ -13306,7 +13343,7 @@ Overload::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
@@ -13340,14 +13377,14 @@ Overload::f(double, int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Ereditariet%C3%A0">Ereditariet&#224;<a class="anchor-link" href="#Ereditariet%C3%A0">&#182;</a></h2><p>L'introduzione di un sottotipo apre, tra le altre, la possibilità che su un oggetto di un sottotipo venga invocato un metodo definito per il supertipo.</p>
+<h2 id="Ereditariet%C3%A0">Ereditariet&#224;<a class="anchor-link" href="#Ereditariet%C3%A0">&#182;</a></h2><p>L'introduzione di un sottotipo apre, tra le altre, la possibilità che su un oggetto di un sottotipo venga invocato un metodo definito nel supertipo.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Above</span> <span class="p">{</span>
@@ -13371,7 +13408,7 @@ Overload::f(double, int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Per prima cosa, osserviamo che in presenza di un sottotipo il tipo apparente e concreto non  necessariamente coincidono: si aprono tre possibilità a seconda che il tipo apparente e concreto siano, rispettivamente</p>
+<p>Per prima cosa, osserviamo che, considerando anche i sottotipi, il tipo apparente e concreto non  necessariamente coincidono: si aprono tre possibilità a seconda che il tipo apparente e concreto siano, rispettivamente</p>
 <ul>
 <li><code>Above</code> e <code>Above</code>,</li>
 <li><code>Above</code> e <code>Below</code>,</li>
@@ -13385,7 +13422,7 @@ Overload::f(double, int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">aa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Above</span><span class="p">();</span>
@@ -13418,14 +13455,14 @@ Overload::f(double, int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>ma non quella di <code>g</code>, dato non è definita per tale tipo</p>
+<p>ma non quella di <code>g</code>, dato non è definita in tale tipo</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">g</span><span class="p">();</span>
@@ -13467,7 +13504,7 @@ Overload::f(double, int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">ab</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Below</span><span class="p">();</span>
@@ -13500,14 +13537,14 @@ Overload::f(double, int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sebbene il tipo concreto sia dotato di <code>g</code>, il compilatore deve scegliere il metodo sulla base del tipo apparente, quindi la chiamata di <code>g</code> resta impossibile.</p>
+<p>Sebbene nel tipo concreto sia definita <code>g</code>, il compilatore scegli il metodo sulla base del tipo apparente, quindi la chiamata di <code>g</code> resta impossibile.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">g</span><span class="p">();</span>
@@ -13542,14 +13579,14 @@ Overload::f(double, int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nel caso del sottotipo, invece, <code>g</code> diventa visibile (e <code>f</code> lo è perché ereditata), quindi sono possibili entrambe le invocazioni.</p>
+<p>Nel caso del sottotipo, invece, <code>g</code> è visibile poiché è definito in tale tipo (e <code>f</code> lo è perché ereditata), quindi sono possibili entrambe le invocazioni.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Below</span> <span class="n">bb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Below</span><span class="p">();</span>
@@ -13584,14 +13621,14 @@ Below::f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Overriding">Overriding<a class="anchor-link" href="#Overriding">&#182;</a></h2><p>Un sottotipo può decidere di riscrivere l'implementazione di un metodo ereditato, ossia farne l'<em>overriding</em></p>
+<h2 id="Overriding">Overriding<a class="anchor-link" href="#Overriding">&#182;</a></h2><p>Un sottotipo può decidere di riscrivere l'implementazione di un metodo ereditato, ossia farne l'<em>overriding</em>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Above</span> <span class="p">{</span>
@@ -13616,14 +13653,15 @@ Below::f
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Affinché ciò avvenga, è però necessario che il metodo riscritto abbia la medesima segnatura di quello nel supertipo. Se usiamo l'annotazione <code>@Override</code> il compilatore può aiutarci a scoprire che, poiché la segnatura è diversa, la nuova implementazione non è davvero un <em>override</em> (ma solo un <em>overload</em> come sarà chiarito nella prossima sezione)!</p>
+<p>Affinché ciò avvenga, è però necessario che il metodo riscritto abbia la medesima segnatura di quello nel supertipo.</p>
+<p>Usando l'annotazione <code>@Override</code>, che serve ad esprimere l'intenzione del programmatore, il compilatore può accorgersi e segnalare che, poiché la segnatura è diversa, la nuova implementazione non è davvero un <em>override</em> (ma solo un <em>overload</em> come sarà chiarito nella prossima sezione)!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BelowErr</span> <span class="kd">extends</span> <span class="n">Above</span> <span class="p">{</span>
@@ -13669,7 +13707,7 @@ Below::f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">aa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Above</span><span class="p">();</span>
@@ -13692,7 +13730,7 @@ Below::f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
@@ -13733,7 +13771,7 @@ Below::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
@@ -13765,14 +13803,14 @@ Below::f(double)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Overloading-ed-ereditariet%C3%A0">Overloading ed ereditariet&#224;<a class="anchor-link" href="#Overloading-ed-ereditariet%C3%A0">&#182;</a></h1><p>Un caso più complesso (e interessante) è quando si mescolano l'<em>overloading</em> è determinato dall'ereditarietà, ossia quando un metodo del sottotipo effettua l'overloading di uno che è definito nel supertipo.</p>
+<h1 id="Overloading-ed-ereditariet%C3%A0">Overloading ed ereditariet&#224;<a class="anchor-link" href="#Overloading-ed-ereditariet%C3%A0">&#182;</a></h1><p>Un caso più complesso (e interessante) è quando l'<em>overloading</em> è determinato dall'ereditarietà, ossia quando è un metodo del sottotipo a causare l'overloading di uno che è definito nel supertipo.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Above</span> <span class="p">{</span>
@@ -13789,7 +13827,7 @@ Below::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Below</span> <span class="kd">extends</span> <span class="n">Above</span> <span class="p">{</span>
@@ -13814,7 +13852,7 @@ Below::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">aa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Above</span><span class="p">();</span>
@@ -13851,14 +13889,14 @@ Below::f(int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nel caso del supertipo, la chiamata con argomento <code>int</code> seleziona l'unico metodo (la cui segnatura è compatibile grazie ad una conversione)</p>
+<p>Nel caso del supertipo, la chiamata con argomento <code>int</code> seleziona l'unico metodo preente (la cui segnatura è compatibile grazie ad una conversione)</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -13897,7 +13935,7 @@ Below::f(int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
@@ -13936,7 +13974,7 @@ Below::f(int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
@@ -13968,14 +14006,14 @@ Below::f(int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Cosa succede però con argomento <code>int</code>? Dal momento che il sottotipo ha un metodo che non ricihede conversioni, ci si potrebbe attendere che sia esso a venir chiamato.</p>
+<p>Cosa succede però con argomento <code>int</code>? Dal momento che il sottotipo ha un metodo che non ricihede conversioni, ci si potrebbe attendere che sia esso a venir eseguito.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -14007,15 +14045,15 @@ Below::f(int)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Questo però non avviene perché il compilatore seleziona la segnatura sulla base del tipo apparente, per <code>Above</code> la segnatura selezionata è <code>f(double)</code> che è compatibile grazie ad una conversione. Una volta selezionata la segnatura, l'invocazione utilizzerà l'implementazione di un metodo di tale segnatura nel sottotipo; tale metodo non è definito nel sottotipo, ma è ereditato dal supertipo.</p>
-<h2 id="Overriding-e-overloading-(e-ereditarit%C3%A0)">Overriding e overloading (e ereditarit&#224;)<a class="anchor-link" href="#Overriding-e-overloading-(e-ereditarit%C3%A0)">&#182;</a></h2><p>Avendo compreso i meccanismi che regolano i casi precedenti, non è difficile comprendere un caso in cui si presentino assieme tutte le possibilità.</p>
+<p>Questo però non avviene perché il compilatore seleziona la segnatura sulla base del tipo apparente: per <code>Above</code> la segnatura selezionata è <code>f(double)</code> che è compatibile grazie ad una conversione. Una volta selezionata la segnatura, l'invocazione utilizzerà l'implementazione di un metodo di tale segnatura nel sottotipo; tale metodo non è definito nel sottotipo, ma è ereditato dal supertipo.</p>
+<h2 id="Overriding-e-overloading-(e-ereditarit%C3%A0)">Overriding e overloading (e ereditarit&#224;)<a class="anchor-link" href="#Overriding-e-overloading-(e-ereditarit%C3%A0)">&#182;</a></h2><p>Avendo analizzato separatamente i vari meccanismi che regolano i casi precedenti, non è difficile comprendere un caso in cui si presentino assieme tutte le possibilità.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Above</span> <span class="p">{</span>
@@ -14050,7 +14088,7 @@ Below::f(int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">aa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Above</span><span class="p">();</span>
@@ -14096,7 +14134,7 @@ Below::f(double)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -14128,14 +14166,14 @@ Below::f(double)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nel caso in cui il tipo apparente è diverso dal concreto, quale che sia il tipo dell'argomento, verrà selezionata l'unica segnatura possibile dato il tipo apparente che è <code>f(double)</code>. Certamente, una volta selezionata la segnatura, l'invocazione si rivolgerà all'implementazione del sottotipo che è un overriding di quella nel supertipo.</p>
+<p>Nel caso in cui il tipo apparente è diverso dal concreto, quale che sia il tipo dell'argomento, verrà selezionata l'unica segnatura possibile dato il tipo apparente che è <code>f(double)</code>. Certamente, una volta selezionata la segnatura, l'invocazione si userà però l'implementazione del sottotipo che fa overriding di quella nel supertipo.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">Above</span> <span class="n">ab</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Below</span><span class="p">();</span>
@@ -14171,7 +14209,7 @@ Below::f(double)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Su <code>ab</code> non c'è verso di ottenere l'esecuzione del metodo definito in <code>Below</code> con segnatura <code>f(int)</code> o di alcun metodo definito in <code>Above</code>!</p>
+<p>Su <code>ab</code> non c'è quindi verso di ottenere l'esecuzione del metodo definito in <code>Below</code> con segnatura <code>f(int)</code>, o di alcun metodo di nome <code>f</code> definito in <code>Above</code>!</p>
 
 </div>
 </div>
