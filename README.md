@@ -5,6 +5,7 @@
 
 Questo repository le seguenti *note* di approfondimento riguardanti l'insegnamento di [Programmazione II](https://prog2.di.unimi.it/) del corso di laurea in [Informatica](https://informatica.cdl.unimi.it/it) dell'[Università degli Studi di Milano](http://www.unimi.it/):
 
+* [Il meccanismo di dispatching](https://prog2-unimi.github.io/notes/DM.html);
 * [Ereditarietà a carattere ontologico](https://prog2-unimi.github.io/notes/EACO.html);
 * [Uguaglianza ed ereditarietà](https://prog2-unimi.github.io/notes/UEE.html);
 * [Composizione e delega](https://prog2-unimi.github.io/notes/CED.html);
