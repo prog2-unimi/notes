@@ -3,7 +3,10 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DM</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>DM</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
 
 <style type="text/css">
   pre { line-height: 125%; }
@@ -13086,7 +13089,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Il-meccanismo-di-dispatching">Il meccanismo di <em>dispatching</em><a class="anchor-link" href="#Il-meccanismo-di-dispatching">&#182;</a></h1><p>Questa breve nota intende illustrare, attraverso una serie di esempi commentati, il meccanismo di <em>dispatching</em> attraverso il quale viene dapprima selezionata la segnatura del metodo da invocare (durante la fase di compilazione) e quindi individuata l'implementazione da eseguire (durante la fase di esecuzione).</p>
@@ -13095,16 +13098,16 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Simple</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Simple::f&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Simple</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Simple::f&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13112,7 +13115,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In queste circostanze, è evidente che il tipo <em>apparente</em> e <em>concerto</em> non possono che coincidere e che l'invocazoine di <code>f</code> su un oggetto di tipo <code>Simple</code> non può che produrre l'invocazione dell'unica implementazione esistente.</p>
@@ -13120,13 +13123,13 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Simple</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Simple</span><span class="p">();</span><span class="w"></span>
-<span class="n">s</span><span class="p">.</span><span class="na">f</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Simple</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Simple</span><span class="p">();</span>
+<span class="n">s</span><span class="p">.</span><span class="na">f</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13152,7 +13155,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Overloading">Overloading<a class="anchor-link" href="#Overloading">&#182;</a></h2><p>Se vengono definiti più metodi col medesimo nome, ossia c'è un di <em>overloading</em>, la selezione della segnatura del metodo da invocare segue la logica del minor numero di conversioni (il compilatore tenta di individuare la segnatura detta <em>most specific</em>).</p>
@@ -13160,19 +13163,19 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Overload</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(int)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Overload</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(int)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13180,7 +13183,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In alcuni casi il numero di conversioni è zero</p>
@@ -13188,14 +13191,14 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Overload</span><span class="p">();</span><span class="w"></span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1.0 è un double, nessuna conversione</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Overload</span><span class="p">();</span>
+<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1.0 è un double, nessuna conversione</span>
 </pre></div>
 
     </div>
@@ -13222,7 +13225,7 @@ Overload::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>mentre in altri è sufficiente effettuare una conversione (da <code>float</code> a <code>double</code>) e non ci sono altre possibilità</p>
@@ -13230,12 +13233,12 @@ Overload::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.0f è un float, una conversione</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.0f è un float, una conversione</span>
 </pre></div>
 
     </div>
@@ -13261,7 +13264,7 @@ Overload::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Le cose si complicano se, date le segnature dei metodi e i tipi dei parametri concreti nell'invocazione, esiste più di una segnatura che si adattarebbe alla chiamata a parità di numero di conversioni.</p>
@@ -13269,19 +13272,19 @@ Overload::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Overload</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(int, double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(double, int)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Overload</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(int, double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Overload::f(double, int)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13289,7 +13292,7 @@ Overload::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Usando due <code>int</code> entrambe i metodi sono invocabili con una conversione a <code>double</code> (del primo, o del secondo argomento)</p>
@@ -13297,13 +13300,13 @@ Overload::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Overload</span><span class="p">();</span><span class="w"></span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Overload</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Overload</span><span class="p">();</span>
+<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13332,7 +13335,7 @@ Overload::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In questo caso non è possibile individuare la segnatura <em>most specific</em>, il compialtore non può scegliere quale segnatura selezione!</p>
@@ -13341,13 +13344,13 @@ Overload::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13374,7 +13377,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Ereditariet%C3%A0">Ereditariet&#224;<a class="anchor-link" href="#Ereditariet%C3%A0">&#182;</a></h2><p>L'introduzione di un sottotipo apre, tra le altre, la possibilità che su un oggetto di un sottotipo venga invocato un metodo definito nel supertipo.</p>
@@ -13382,22 +13385,22 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">g</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">g</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13405,7 +13408,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Per prima cosa, osserviamo che, considerando anche i sottotipi, il tipo apparente e concreto non  necessariamente coincidono: si aprono tre possibilità a seconda che il tipo apparente e concreto siano, rispettivamente</p>
@@ -13420,13 +13423,13 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span><span class="w"></span>
-<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span>
+<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13452,7 +13455,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ma non quella di <code>g</code>, dato non è definita in tale tipo</p>
@@ -13460,12 +13463,12 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">g</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">g</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13494,7 +13497,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nel secondo caso, è possibile invocare <code>f</code> perché è visibile (a partire dal tipo apparente) e la sua implementazione (nel tipo concreto) viene ereditata dal supertipo</p>
@@ -13502,13 +13505,13 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
-<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
+<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13534,7 +13537,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sebbene nel tipo concreto sia definita <code>g</code>, il compilatore sceglie il metodo sulla base del tipo apparente, quindi la chiamata di <code>g</code> resta impossibile.</p>
@@ -13542,12 +13545,12 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">g</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">g</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13576,7 +13579,7 @@ Overload::f(double, int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nel caso del sottotipo, invece, <code>g</code> è visibile poiché è definito in tale tipo (e <code>f</code> lo è perché ereditata), quindi sono possibili entrambe le invocazioni.</p>
@@ -13584,14 +13587,14 @@ Overload::f(double, int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">();</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">g</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">();</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">g</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13618,7 +13621,7 @@ Below::f
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Overriding">Overriding<a class="anchor-link" href="#Overriding">&#182;</a></h2><p>Un sottotipo può decidere di riscrivere l'implementazione di un metodo ereditato, ossia farne l'<em>overriding</em>.</p>
@@ -13626,23 +13629,23 @@ Below::f
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13650,7 +13653,7 @@ Below::f
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Affinché ciò avvenga, è però necessario che il metodo riscritto abbia la medesima segnatura di quello nel supertipo.</p>
@@ -13659,17 +13662,17 @@ Below::f
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BelowErr</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;BelowErr::f(int)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BelowErr</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;BelowErr::f(int)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13697,7 +13700,7 @@ Below::f
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Tornando a considerare i tre possibili casi di combinazione tra tipo apparente e concreto</p>
@@ -13705,14 +13708,14 @@ Below::f
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span><span class="w"></span>
-<span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
-<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span>
+<span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
+<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -13720,7 +13723,7 @@ Below::f
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>è ovvio che su <code>aa</code> e <code>bb</code> l'invocazione corrisponderà alle implementazioni definite nella classe del tipo (apparente e concreto):</p>
@@ -13728,13 +13731,13 @@ Below::f
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13761,7 +13764,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Il caso interessante è quello in cui il tipo concreto è il sottotipo; in tal caso, una volta che il compilatore ha determinato che la segnatura da chiamare è <code>f(double)</code>, l'inocazione riguarderà però il codice presente nell'implementazione del tipo apparente:</p>
@@ -13769,12 +13772,12 @@ Below::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13800,7 +13803,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Overloading-ed-ereditariet%C3%A0">Overloading ed ereditariet&#224;<a class="anchor-link" href="#Overloading-ed-ereditariet%C3%A0">&#182;</a></h1><p>Un caso più complesso (e interessante) è quando l'<em>overloading</em> è determinato dall'ereditarietà, ossia quando è un metodo del sottotipo a causare l'overloading di uno che è definito nel supertipo.</p>
@@ -13808,22 +13811,22 @@ Below::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(int)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(int)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13831,7 +13834,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Come nel caso precedente, i casi in cui il tipo apparente coincide con quello concreto e non ci sono conversioni, sono banali:</p>
@@ -13839,16 +13842,16 @@ Below::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span><span class="w"></span>
-<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span>
+<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
 
-<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13875,7 +13878,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nel caso del supertipo, la chiamata con argomento <code>int</code> seleziona l'unico metodo preente (la cui segnatura è compatibile grazie ad una conversione)</p>
@@ -13883,12 +13886,12 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13914,7 +13917,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In quello del sottotipo, la chiamata con argomento <code>double</code> seleziona il metodo ereditato (che non richiede conversioni)</p>
@@ -13922,12 +13925,12 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13953,7 +13956,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>La cosa si fa interessante se il tipo apparente non coincide con quello concreto. In tal caso, non sorprendentemente, la chiamata con argomento <code>double</code> seleziona il metodo del tipo apparente con tale segnatura:</p>
@@ -13961,12 +13964,12 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13992,7 +13995,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Cosa succede però con argomento <code>int</code>? Dal momento che il sottotipo ha un metodo che non ricihede conversioni, ci si potrebbe attendere che sia esso a venir eseguito.</p>
@@ -14000,12 +14003,12 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -14031,7 +14034,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Questo però non avviene perché il compilatore seleziona la segnatura sulla base del tipo apparente: per <code>Above</code> la segnatura selezionata è <code>f(double)</code> che è compatibile grazie ad una conversione. Una volta selezionata la segnatura, l'invocazione utilizzerà l'implementazione di un metodo di tale segnatura nel sottotipo; tale metodo non è definito nel sottotipo, ma è ereditato dal supertipo.</p>
@@ -14040,26 +14043,26 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Above::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(int)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(double)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Below</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Above</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(int)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Below::f(double)&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -14067,7 +14070,7 @@ Below::f(int)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Restano come sempre i casi banali (tipo apparente coincidente con il concreto, nessuna conversione):</p>
@@ -14075,17 +14078,17 @@ Below::f(int)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span><span class="w"></span>
-<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Above</span><span class="p">();</span>
+<span class="n">Below</span><span class="w"> </span><span class="n">bb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
 
-<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">bb</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -14113,7 +14116,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nel caso del supertipo, l'invocazione col tipo <code>int</code> sarà soddisfatta tramite una conversione</p>
@@ -14121,12 +14124,12 @@ Below::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">aa</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -14152,7 +14155,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nel caso in cui il tipo apparente è diverso dal concreto, quale che sia il tipo dell'argomento, verrà selezionata l'unica segnatura possibile dato il tipo apparente che è <code>f(double)</code>. Certamente, una volta selezionata la segnatura, l'invocazione si userà però l'implementazione del sottotipo che fa overriding di quella nel supertipo.</p>
@@ -14160,15 +14163,15 @@ Below::f(double)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div  class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span><span class="w"></span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
 
-<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"></span>
+<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -14195,7 +14198,7 @@ Below::f(double)
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Su <code>ab</code> non c'è quindi verso di ottenere l'esecuzione del metodo definito in <code>Below</code> con segnatura <code>f(int)</code>, o di alcun metodo di nome <code>f</code> definito in <code>Above</code>!</p>
