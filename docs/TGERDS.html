@@ -13092,8 +13092,9 @@ div#notebook {
 <div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tipi-generici-e-relazioni-di-sottotipo">Tipi generici e relazioni di sottotipo<a class="anchor-link" href="#Tipi-generici-e-relazioni-di-sottotipo">&#182;</a></h1><p>Se <code>S</code> $\prec$ <code>T</code> non è vero che ≠ <code>G&lt;S&gt;</code> $\prec$ <code>G&lt;T&gt;</code> (dove <code>G</code> è un qualche tipo generico). Usando una immagine tratta dal <a href="https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html">tutorial</a></p>
-<p><img src="https://docs.oracle.com/javase/tutorial/figures/java/generics-subtypeRelationship.gif" alt="" /></p>
+<h1 id="Tipi-generici-e-relazioni-di-sottotipo">Tipi generici e relazioni di sottotipo<a class="anchor-link" href="#Tipi-generici-e-relazioni-di-sottotipo">&#182;</a></h1><p>Se <code>S</code> $\prec$ <code>T</code> non è vero che ≠ <code>G&lt;S&gt;</code> $\prec$ <code>G&lt;T&gt;</code> (dove <code>G</code> è un qualche tipo generico). Usando una immagine tratta dal <a href="https://dev.java/learn/generics/intro/">tutorial</a></p>
+<center><img width=480 src="https://dev.java/assets/images/generics/01_generics-inheritance.png" /></center>
+
 <p>Si considerino ad esempio</p>
 
 </div>
@@ -13241,8 +13242,9 @@ div#notebook {
 <div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Inoltre, come già discusso, vale invece che se <code>G</code> $\prec$ <code>H</code>, allora per ogni <code>T</code> vale che <code>G&lt;T&gt;</code> $\prec$ <code>H&lt;T&gt;</code>, di nuovo usando una immagine dal <a href="https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html">tutorial</a></p>
-<p><img src="https://docs.oracle.com/javase/tutorial/figures/java/generics-sampleHierarchy.gif" alt="" /></p>
+<p>Inoltre, come già discusso, vale invece che se <code>G</code> $\prec$ <code>H</code>, allora per ogni <code>T</code> vale che <code>G&lt;T&gt;</code> $\prec$ <code>H&lt;T&gt;</code>, di nuovo usando una immagine dal <a href="https://dev.java/learn/generics/intro/">tutorial</a></p>
+<center><img width=240 src="https://dev.java/assets/images/generics/02_collections-inheritance.png" /></center>
+
 
 </div>
 </div>
@@ -13732,8 +13734,9 @@ div#notebook {
 <div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Wildcard">Wildcard<a class="anchor-link" href="#Wildcard">&#182;</a></h1><p>Esiste un parametro di tipo <strong>wildcard</strong> <code>?</code> che intuitivamente sta per &quot;qualunque tipo&quot;, ragion per cui vale <code>G&lt;T&gt;</code> $\prec$<code>G&lt;?&gt;</code> (per ogni <code>T</code>); con un immagine tratta dal <a href="https://docs.oracle.com/javase/tutorial/java/generics/subtyping.html">tutorial</a></p>
-<p><img src="https://docs.oracle.com/javase/tutorial/figures/java/generics-listParent.gif" alt="" /></p>
+<h1 id="Wildcard">Wildcard<a class="anchor-link" href="#Wildcard">&#182;</a></h1><p>Esiste un parametro di tipo <strong>wildcard</strong> <code>?</code> che intuitivamente sta per &quot;qualunque tipo&quot;, ragion per cui vale <code>G&lt;T&gt;</code> $\prec$<code>G&lt;?&gt;</code> (per ogni <code>T</code>); con un immagine tratta dal <a href="https://dev.java/learn/generics/wildcards/">tutorial</a></p>
+<center><img width=480 src="https://dev.java/assets/images/generics/04_super-types.png" /></center>
+
 <p>Ad esempio</p>
 
 </div>
@@ -14002,7 +14005,7 @@ div#notebook {
 </ul>
 <p>si osservi che, nella seconda relazione, l'ordine dei generici è rovesciato rispetto a prima.</p>
 <p>Ragionando per transitività, se <code>S</code> $\prec$ <code>T</code>, si ha <code>G&lt;T&gt;</code> $\prec$ <code>G&lt;? super S&gt;</code> che, in somma, permette di concludere che: il generico basato sul <em>lower bound del sottotipo</em> (<code>G&lt;? super S&gt;</code>) è supertipo sia di <code>G&lt;S&gt;</code> che di <code>G&lt;T&gt;</code>.</p>
-<h3 id="Esempio:-consumatore">Esempio: consumatore<a class="anchor-link" href="#Esempio:-consumatore">&#182;</a></h3><p>Ad esempio, consideriamo di nuovo il metodo <code>copy</code> visto in precedenza. L'unico vincolo in questo caso è che il consumatore di elementi (estratti dalla lista di <code>T</code>) sia una <code>List&lt;? super T&gt;</code> (che è supertipo sia di <code>List&lt;T&gt;</code>) in grado di ricevere elementi di tipo <code>T</code>.</p>
+<h3 id="Esempio:-consumatore">Esempio: consumatore<a class="anchor-link" href="#Esempio:-consumatore">&#182;</a></h3><p>Ad esempio, consideriamo di nuovo il metodo <code>copy</code> visto in precedenza. L'unico vincolo in questo caso è che il consumatore di elementi (estratti dalla lista di <code>T</code>) sia una <code>List&lt;? super T&gt;</code> (che è supertipo di <code>List&lt;T&gt;</code>) in grado di ricevere elementi di tipo <code>T</code>.</p>
 
 </div>
 </div>
@@ -14196,8 +14199,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Due-schemi-riassuntivi">Due schemi riassuntivi<a class="anchor-link" href="#Due-schemi-riassuntivi">&#182;</a></h2><p>Una bella immagine di <a href="https://stackoverflow.com/users/2707792/andrey-tyukin">Andrey Tyukin</a> può aiutare a riflettere sulle relazioni tra tipo e le nozioni di produttore e consumatore.</p>
 <p><img src="https://i.stack.imgur.com/KjDLw.png" alt="" /></p>
-<p>Per finire, una immagine tratta dal <a href="https://docs.oracle.com/javase/tutorial/java/generics/subtyping.html">tutorial</a> può aiutare a ricordare l'ordine indotto da queste relazioni</p>
-<p><img src="https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif" alt="" /></p>
+<p>Per finire, una immagine tratta dal <a href="https://dev.java/learn/generics/wildcards/">tutorial</a> può aiutare a ricordare l'ordine indotto da queste relazioni</p>
+<center><img width=600 src="https://dev.java/assets/images/generics/05_lists-declarations.png" /></center>
+
 
 </div>
 </div>
