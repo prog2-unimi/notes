@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CED</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
-  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
-
 <style type="text/css">
   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -28,6 +27,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #008400 } /* Generic.Inserted */
@@ -84,9 +84,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*!
 *
@@ -13054,9 +13051,9 @@ div#notebook {
 }
 </style>
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -13086,31 +13083,25 @@ div#notebook {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+<!-- End of mathjax configuration --></head>
 <body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div  class="cell border-box-sizing code_cell rendered">
-
+<main>
+<div class="border-box-sizing" id="notebook" tabindex="-1">
+<div class="container" id="notebook-container">
+<div class="cell border-box-sizing code_cell rendered">
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Composizione-e-delega">Composizione e delega<a class="anchor-link" href="#Composizione-e-delega">&#182;</a></h1><p>Questa breve nota presenta la <em>composizione</em> e la <em>delega</em> come possibili alternative all'ereditarietà.</p>
-<p>La nota segue l'esposizione del <em>Capitolo 4</em> (e in particolare dell'<em>Item 18</em>) del testo &quot;Effective Java&quot; (di Joshua Bloch).</p>
-<h2 id="Estendere-o-utilizzare?">Estendere o utilizzare?<a class="anchor-link" href="#Estendere-o-utilizzare?">&#182;</a></h2><p>Supponiamo di avere una classe <code>Adder</code> in grado di tenere traccia di somme tra interi (che possono essere svolte considerando un numero per volta oppure prelevando gli addendi da una lista), il cui codice è</p>
-
+<h1 id="Composizione-e-delega">Composizione e delega<a class="anchor-link" href="#Composizione-e-delega">¶</a></h1><p>Questa breve nota presenta la <em>composizione</em> e la <em>delega</em> come possibili alternative all'ereditarietà.</p>
+<p>La nota segue l'esposizione del <em>Capitolo 4</em> (e in particolare dell'<em>Item 18</em>) del testo "Effective Java" (di Joshua Bloch).</p>
+<h2 id="Estendere-o-utilizzare?">Estendere o utilizzare?<a class="anchor-link" href="#Estendere-o-utilizzare?">¶</a></h2><p>Supponiamo di avere una classe <code>Adder</code> in grado di tenere traccia di somme tra interi (che possono essere svolte considerando un numero per volta oppure prelevando gli addendi da una lista), il cui codice è</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13130,6 +13121,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13201,30 +13193,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/Adder.java#L26-L41" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/Adder.java#L26-L41" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Supponiamo ora di voler costruire una nuova classe in grado di tener traccia non solo della somma, ma anche dei valori di volta in volta sommati.</p>
 <p>Dato che tale funzionalità sembra estendere quella della classe appena introdotta, sembra naturale procede per estensione, definendo la classe <code>LogAdderExt</code> come segue</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13244,6 +13228,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13318,30 +13303,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/LogAdderExt.java#L27-L45" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/LogAdderExt.java#L27-L45" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Si osservi che (basandosi sulle specifiche del supertipo) appare assolutamente corretta l'idea di sovrascrivere entrambi i metodi <code>add</code>, anche quello evidenziato in giallo.</p>
 <p>L'esecuzione di un semplice <em>client</em> di tali implementazioni</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13361,6 +13338,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13426,28 +13404,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lae</span><span class="p">.</span><span class="na">log</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainECE.java#L29-L38" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainECE.java#L29-L38" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>mostra però un problema, poiché produce l'output</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>6
 6
@@ -13455,32 +13426,24 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Seppure le somme sono corrette in entrambi i casi, la lista dei valori aggiunti è evidentemente duplicata. Cosa è successo?</p>
 <p>Per capirlo possiamo eseguire di nuovo il codice del client dopo aver <em>instrumentato</em> il codice dei metodi <code>add</code> delle classi <code>Adder</code> e <code>LogAdderExt</code> con <a href="https://github.com/prog2-unimi/cali">cali</a>, uno strumento che permette di aggiungere automaticamente codice ai metodi per tracciarne le invocazioni.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>it.unimi.di.prog2.notes.ced.ec.Adder.add([1, 2, 3])
 it.unimi.di.prog2.notes.ced.ec.Adder.add(1)
@@ -13500,28 +13463,21 @@ it.unimi.di.prog2.notes.ced.ec.Adder.add(3)
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Quel che accade è che l'implementazione del metodo <code>add</code> per la lista di <code>LogAdderExt</code>, dopo aver aggiunto alla lista gli interi passati come argomento, invoca il metodo del <em>supertipo</em> il quale, a sua volta, invoca il metodo <code>add</code> per il singolo intero; questo, a causa del fatto che il tipo concreto è <code>LogAdderExt</code>, risulta in una chiamata del suo metodo <code>add</code> per un singolo intero (che aggiunge di nuovo il numero alla lista) che infine chiama il metodo del <em>supertipo</em> che svolge la somma.</p>
 <p>Osservate è <strong>molto improbabile</strong> basarsi sulle specifiche per evitare un problema del genere, dato che non è necessario che una specifica segnali che adopererà altri metodi della classe per svolgere il suo compito — a meno che la classe non sia esplicitamente specificata (e documentata) per essere estesa.</p>
-<h3 id="Composizione">Composizione<a class="anchor-link" href="#Composizione">&#182;</a></h3><p>Una soluzione semplice a questo problema è fare in modo che la classe che somma e tiene traccia dei numeri non estenda <code>Adder</code> ma lo adoperi, attraverso la composizione, come nella classe <code>LogAdderComp</code></p>
-
+<h3 id="Composizione">Composizione<a class="anchor-link" href="#Composizione">¶</a></h3><p>Una soluzione semplice a questo problema è fare in modo che la classe che somma e tiene traccia dei numeri non estenda <code>Adder</code> ma lo adoperi, attraverso la composizione, come nella classe <code>LogAdderComp</code></p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13541,6 +13497,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13618,29 +13575,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/LogAdderComp.java#L27-L48" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ec/LogAdderComp.java#L27-L48" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In questo caso, dato che <code>adder</code> e <code>seen</code> sono oggetti distinti, non è possibile alcuna commistione tra le chiamate dei loro metodi e, come mostrato dal <em>client</em> seguente, l'errore di prima non si presenta</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13660,6 +13609,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13725,21 +13675,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lac</span><span class="p">.</span><span class="na">log</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainECC.java#L29-L38" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainECC.java#L29-L38" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>6
 6
@@ -13747,26 +13691,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Si-pu%C3%B2-fare-meglio">Si pu&#242; fare meglio<a class="anchor-link" href="#Si-pu%C3%B2-fare-meglio">&#182;</a></h2><p>La soluzione precendente presenta però un limite: i due tipi non sono in alcuna relazione, per cui non è possibile sostiuire facilmente uno all'altro. L'ideale sarebbe avere una interfaccia <code>AdderInterface</code> come la seguente</p>
-
+<h2 id="Si-pu%C3%B2-fare-meglio">Si può fare meglio<a class="anchor-link" href="#Si-pu%C3%B2-fare-meglio">¶</a></h2><p>La soluzione precendente presenta però un limite: i due tipi non sono in alcuna relazione, per cui non è possibile sostiuire facilmente uno all'altro. L'ideale sarebbe avere una interfaccia <code>AdderInterface</code> come la seguente</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13786,6 +13723,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13849,29 +13787,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">result</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/AdderInterface.java#L26-L33" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/AdderInterface.java#L26-L33" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>che consenta di scrivere codice come</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13891,6 +13821,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13950,31 +13881,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">result</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainEF.java#L31-L34" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainEF.java#L31-L34" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>consentendo di decidere in un secondo momento se usare un semplice <code>Adder</code> (il cui codice è identico a quello presentato in precedenza, fatta eccezione per il fatto che nell'intestazione della classe aggiungeremo <code>implements AdderInterface</code>) che tenga traccia della somma, o una variante di esso in grado di tener traccia anche degli addendi.</p>
 <p>Ma non vogliamo incorrere nell'errore precedente.</p>
-<p>Per questa ragione astraiamo l'idea di usare il supertipo in una classe che implementi l'interfaccia di cui sopra, delegando (<em>forward</em>) ogni metodo al supertipo. Questa classe si comporta un po' come <code>LogAdderComp</code>, ma non altera alcun comportamento; si occupa solo di &quot;girare&quot; al supertipo tutte le chiamate.</p>
-
+<p>Per questa ragione astraiamo l'idea di usare il supertipo in una classe che implementi l'interfaccia di cui sopra, delegando (<em>forward</em>) ogni metodo al supertipo. Questa classe si comporta un po' come <code>LogAdderComp</code>, ma non altera alcun comportamento; si occupa solo di "girare" al supertipo tutte le chiamate.</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13994,6 +13917,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -14072,33 +13996,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/AdderForwarder.java#L26-L48" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/AdderForwarder.java#L26-L48" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Utilizzando tale &quot;guscio&quot; è molto semplice ottenere il risultato cercato:</p>
+<p>Utilizzando tale "guscio" è molto semplice ottenere il risultato cercato:</p>
 <ul>
 <li>ottenendo un sottotipo della medesima interfaccia che soddisfa <code>Adder</code>,</li>
 <li>non incorrendo nel rischio di un rimbalzo tra i metodi del supertipo e del sottotipo.</li>
 </ul>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -14118,6 +14034,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -14196,30 +14113,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/LogAdder.java#L27-L49" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/ef/LogAdder.java#L27-L49" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Osservate che, tra l'altro, in questa classe è sufficiente sovrascrivere solo i metodi <code>add</code> perché a implementare le funzionalità del metodo <code>result</code> ha già provvedduto il <em>forward</em> contenuto nella classe <code>AdderForwarder</code>; ovviamente va aggiunto il metodo <code>log</code> relativo alla nuova funzionalità provvista dal sottotipo.</p>
 <p>Ora è del tutto banale poter invocare <code>use</code> sul sommatore, o sul sommatore che tenga traccia degli addendi.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -14239,6 +14148,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -14310,29 +14220,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainEF.java#L29-L44" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/ced/MainEF.java#L29-L44" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Osservate che c'è un vantaggio in più: <code>LogAdder</code> può scegliere nel suo costruttore a che implementazione di <code>AdderInterface</code> fare riferimento; se in futuro ci fossero implementazioni migliori, <code>LogAdder</code>, non essendo vincolato a essere un sottotipo di <code>Adder</code>, potrebbe essere utilizzato con una qualunque di tali implementazioni.</p>
 <p>L'esecuzione del codice <em>client</em> mostra il comportamento desiderato</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>6
 6
@@ -14340,19 +14243,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-    </div>
-  </div>
+</div>
+</div>
+</main>
 </body>
-
-
-
-
-
-
-
 <link href="custom.css" rel="stylesheet"></html>

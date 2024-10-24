@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>UEE</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
-  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
-
 <style type="text/css">
   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -28,6 +27,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #008400 } /* Generic.Inserted */
@@ -84,9 +84,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*!
 *
@@ -13054,9 +13051,9 @@ div#notebook {
 }
 </style>
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -13086,32 +13083,26 @@ div#notebook {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+<!-- End of mathjax configuration --></head>
 <body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div  class="cell border-box-sizing code_cell rendered">
-
+<main>
+<div class="border-box-sizing" id="notebook" tabindex="-1">
+<div class="container" id="notebook-container">
+<div class="cell border-box-sizing code_cell rendered">
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Uguaglianza-ed-ereditariet%C3%A0">Uguaglianza ed ereditariet&#224;<a class="anchor-link" href="#Uguaglianza-ed-ereditariet%C3%A0">&#182;</a></h1><p>Questa breve nota discute i limiti imposti dall'ereditarietà al soddisfacimento del contratto imposto dal metodo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object"><code>equals</code></a>) della classe <code>Object</code>.</p>
-<p>La nota segue l'esposizione della <em>Sezione 7.9.3</em> del testo &quot;Program Development in Java&quot; (di Barbara H. Liskov <em>et al.</em>) e dell'<em>Item 10</em> del testo &quot;Effective Java&quot; (di Joshua Bloch).</p>
-<h2 id="Simmetria">Simmetria<a class="anchor-link" href="#Simmetria">&#182;</a></h2><p>L'implementazione <em>ovvia</em> non funziona: se un sottotipo aggiunge un &quot;valore&quot;, non basta controllare con <code>instanceof</code> e verificare che siano uguali i valori in gioco…</p>
+<h1 id="Uguaglianza-ed-ereditariet%C3%A0">Uguaglianza ed ereditarietà<a class="anchor-link" href="#Uguaglianza-ed-ereditariet%C3%A0">¶</a></h1><p>Questa breve nota discute i limiti imposti dall'ereditarietà al soddisfacimento del contratto imposto dal metodo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object"><code>equals</code></a>) della classe <code>Object</code>.</p>
+<p>La nota segue l'esposizione della <em>Sezione 7.9.3</em> del testo "Program Development in Java" (di Barbara H. Liskov <em>et al.</em>) e dell'<em>Item 10</em> del testo "Effective Java" (di Joshua Bloch).</p>
+<h2 id="Simmetria">Simmetria<a class="anchor-link" href="#Simmetria">¶</a></h2><p>L'implementazione <em>ovvia</em> non funziona: se un sottotipo aggiunge un "valore", non basta controllare con <code>instanceof</code> e verificare che siano uguali i valori in gioco…</p>
 <p>Consideriamo il seguente tipo <code>T</code></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13131,6 +13122,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13201,29 +13193,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="hll"><span class="w">  </span><span class="p">}</span>
 </span><span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/sym/T.java#L29-L43" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/sym/T.java#L29-L43" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>e il suo sottotipo <code>S</code></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13243,6 +13227,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13314,30 +13299,22 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="hll"><span class="w">  </span><span class="p">}</span>
 </span><span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/sym/S.java#L29-L44" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/sym/S.java#L29-L44" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Entrambi i tipi sono dotati di una implementazione di <code>equals</code> (qui evidenziata in giallo) che, dopo aver verificato il tipo dell'argomento <code>o</code> procedono all'ovvio controllo dell'identità dei valori del/i campo/i corrispondente/i.</p>
 <p>Tale implementazione viola la proprietà di <strong>simmetria</strong>, ossia $t \sim s$ non implica $s \sim t$, come dimostrato dal seguente metodo <code>main</code></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13357,6 +13334,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13418,61 +13396,46 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainSym.java#L33-L38" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainSym.java#L33-L38" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>che produce l'output</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>true
 false
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Quel che accade è che <code>t instanceof S</code> è <em>falso</em>, ma <code>s instanceof T</code> è <em>vero</em>, per cui l'implementazione di <code>equals</code> di <code>S</code> non sa cosa fare con <code>t</code>, mentre quella di <code>T</code> funziona con <code>s</code> (ovviamente trascurando <code>b</code>, di cui ignora l'esistenza).</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Transitivit%C3%A0">Transitivit&#224;<a class="anchor-link" href="#Transitivit%C3%A0">&#182;</a></h2><p>Non è facile aggiustare l'implementazione di <code>equals</code> di <code>S</code> gestendo accortamente il caso in cui <code>o</code> ha il tipo effettivo di <code>T</code> imitando il suo comportamento, ossia &quot;scordandosi&quot; di <code>b</code>, come (nella parte evidenziata) nel seguente codice</p>
-
+<h2 id="Transitivit%C3%A0">Transitività<a class="anchor-link" href="#Transitivit%C3%A0">¶</a></h2><p>Non è facile aggiustare l'implementazione di <code>equals</code> di <code>S</code> gestendo accortamente il caso in cui <code>o</code> ha il tipo effettivo di <code>T</code> imitando il suo comportamento, ossia "scordandosi" di <code>b</code>, come (nella parte evidenziata) nel seguente codice</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13492,6 +13455,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13555,29 +13519,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="hll"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </span><span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/trans/S.java#L37-L44" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/trans/S.java#L37-L44" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Così facendo infatti, la simmetria è rispettata, ma risulterà violata la proprietà <strong>transitiva</strong>, ovvero anche avendo $s \sim t$ e $t \sim u$ non è detto che $s \sim u$. Questo è dimostrato dalla seguente porzione di codice</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13597,6 +13553,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13660,28 +13617,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">u</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainTrans.java#L33-L40" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainTrans.java#L33-L40" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>che produce l'output</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>true
 true
@@ -13689,26 +13639,19 @@ false
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Il-principio-di-sostituzione">Il principio di sostituzione<a class="anchor-link" href="#Il-principio-di-sostituzione">&#182;</a></h2><p>Si potrebbe pensare che il problema sia <code>instanceof</code> che è antisimmetrico, per cui una soluzione che viene talvolta suggerita è di sostituire nell'implementazione di <code>equals</code> di <code>T</code> la condizione <code>o instanceof T</code> con la condizione <code>getClass() == o.getClass()</code> che è simmetrica (e risulta vera se e solo se gli oggetti hanno identico tipo concreto).</p>
-
+<h2 id="Il-principio-di-sostituzione">Il principio di sostituzione<a class="anchor-link" href="#Il-principio-di-sostituzione">¶</a></h2><p>Si potrebbe pensare che il problema sia <code>instanceof</code> che è antisimmetrico, per cui una soluzione che viene talvolta suggerita è di sostituire nell'implementazione di <code>equals</code> di <code>T</code> la condizione <code>o instanceof T</code> con la condizione <code>getClass() == o.getClass()</code> che è simmetrica (e risulta vera se e solo se gli oggetti hanno identico tipo concreto).</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13728,6 +13671,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13790,29 +13734,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/T.java#L36-L42" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/T.java#L36-L42" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Si può applicare la stessa scelta anche a <code>S</code>, sebbene questo sia utile solo qualora tale classe venisse estesa.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13832,6 +13768,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13894,31 +13831,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/S.java#L37-L43" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/S.java#L37-L43" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In questo modo la simmetria e la transitività sono rispettate perché <code>equals</code> funziona solo per oggetti del medesimo tipo, avendo valore <code>false</code> per oggetti di tipo diverso (anche se sottotipi l'uno dell'altro).</p>
 <p>Questo però viola il <strong>principio di sostituzione</strong>!</p>
-<p>Per cogliere meglio questo aspetto consideriamo <code>R</code>, una ulteriore estensione di <code>T</code> che non aggiunga alcun &quot;valore&quot;, ma solo un &quot;comportamento&quot; e che, pertanto, non ridefinisca neppure <code>equals</code>.</p>
-
+<p>Per cogliere meglio questo aspetto consideriamo <code>R</code>, una ulteriore estensione di <code>T</code> che non aggiunga alcun "valore", ma solo un "comportamento" e che, pertanto, non ridefinisca neppure <code>equals</code>.</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -13938,6 +13867,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -13998,33 +13928,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hi!"</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/R.java#L29-L37" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/R.java#L29-L37" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Supponiamo ora di sviluppare una classe di utilità con un metodo <code>isSmall</code> che restituisca <code>true</code> per tutti gli oggetti per cui <code>a</code> è <code>1</code>, oppure <code>2</code> e supponiamo (sebbene questo sia estremamente innaturale e inefficiente) di implementare tale metodo verificando l'appartenenza a un insieme <code>SMALLS</code> che contiene gli unici due oggetti che soddisfano tale requisito.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -14044,6 +13966,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -14106,29 +14029,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/Client.java#L31-L37" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/lsp/Client.java#L31-L37" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>La seguente porzione di codice mostra che il confronto tra oggetti di tipo diverso (anche se uno è sottotipo dell'altro) restituisce <code>false</code> (il che risolve i problemi di simmetria e transitività); mostra però anche che sostituendo il sottotipo <code>R</code> a <code>T</code> (vedi il codice evidenziato) il comportamento cambia!</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
-
 <div class="output_html rendered_html output_subarea output_execute_result"><style>pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -14148,6 +14063,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .output_html .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .output_html .gd { color: #A00000 } /* Generic.Deleted */
 .output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .output_html .gr { color: #E40000 } /* Generic.Error */
 .output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .output_html .gi { color: #008400 } /* Generic.Inserted */
@@ -14213,28 +14129,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </span><span class="hll"><span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Client</span><span class="p">.</span><span class="na">isSmall</span><span class="p">(</span><span class="n">r</span><span class="p">));</span>
 </span><span class="p">}</span>
 </pre></div>
-<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainLSP.java#L35-L44" target="_blank">[sorgente]</a></div>
-
-</div>
-
+<p><a href="https://github.com/prog2-unimi/notes/blob/master/src/main/java/it/unimi/di/prog2/notes/uee/MainLSP.java#L35-L44" target="_blank">[sorgente]</a></p></div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>L'output infatti è</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
-
+<div class="cell border-box-sizing code_cell rendered">
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>false
 false
@@ -14243,26 +14152,17 @@ false
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Questo accade perché l'implementazione di <code>Set</code> si basa sul metodo <code>equals</code> per decidere se un oggetto appartiene all'insieme, ma gli elementi di <code>SMALLS</code> (che sono di tipo <code>T</code>) non risultano mai uguali a oggetti di tipo <code>R</code>!</p>
-
 </div>
 </div>
 </div>
-    </div>
-  </div>
+</div>
+</div>
+</main>
 </body>
-
-
-
-
-
-
-
 <link href="custom.css" rel="stylesheet"></html>

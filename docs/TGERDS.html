@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TGERDS</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
-  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
-
 <style type="text/css">
   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -28,6 +27,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .highlight .gr { color: #E40000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #008400 } /* Generic.Inserted */
@@ -84,9 +84,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
   </style>
-
-
-
 <style type="text/css">
 /*!
 *
@@ -13052,9 +13049,9 @@ div#notebook {
 }
 </style>
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
     init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
@@ -13084,243 +13081,194 @@ div#notebook {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+<!-- End of mathjax configuration --></head>
 <body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<main>
+<div class="border-box-sizing" id="notebook" tabindex="-1">
+<div class="container" id="notebook-container">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tipi-generici-e-relazioni-di-sottotipo">Tipi generici e relazioni di sottotipo<a class="anchor-link" href="#Tipi-generici-e-relazioni-di-sottotipo">&#182;</a></h1><p>Se <code>S</code> $\prec$ <code>T</code> non è vero che ≠ <code>G&lt;S&gt;</code> $\prec$ <code>G&lt;T&gt;</code> (dove <code>G</code> è un qualche tipo generico). Usando una immagine tratta dal <a href="https://dev.java/learn/generics/intro/">tutorial</a></p>
-<center><img width=480 src="https://dev.java/assets/images/generics/01_generics-inheritance.png" /></center>
-
+<h1 id="Tipi-generici-e-relazioni-di-sottotipo">Tipi generici e relazioni di sottotipo<a class="anchor-link" href="#Tipi-generici-e-relazioni-di-sottotipo">¶</a></h1><p>Se <code>S</code> $\prec$ <code>T</code> non è vero che ≠ <code>G&lt;S&gt;</code> $\prec$ <code>G&lt;T&gt;</code> (dove <code>G</code> è un qualche tipo generico). Usando una immagine tratta dal <a href="https://dev.java/learn/generics/intro/">tutorial</a></p>
+<center><img alt="No description has been provided for this image" src="https://dev.java/assets/images/generics/01_generics-inheritance.png" width="480"/></center>
 <p>Si considerino ad esempio</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lo</span><span class="p">;</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Se <code>li</code> fosse un sottotipo di <code>lo</code> l'assegnamento seguente sarebbe possibile (senza <em>cast</em>)</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="p">)</span><span class="n">li</span><span class="p">;</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">List</span><span class="p">)</span><span class="n">li</span><span class="p">;</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Una volta ottenuto l'<em>alias</em> <code>lo</code> potremmo usarlo per aggiungere di tutto a <code>li</code></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">lo</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">());</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">lo</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">());</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[3]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>true</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ma ovviamente, una volta estratto da <code>li</code> (come <code>Integer</code>) un oggetto qualunque potrebbe dare adito ad un errore di conversione</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">li</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">li</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">java.lang.ClassCastException: class java.lang.Object cannot be cast to class java.lang.Integer (java.lang.Object and java.lang.Integer are in module java.base of loader &#39;bootstrap&#39;)</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.ClassCastException: class java.lang.Object cannot be cast to class java.lang.Integer (java.lang.Object and java.lang.Integer are in module java.base of loader 'bootstrap')</span>
 <span class="ansi-red-intense-fg ansi-bold">	at .(#16:1)</span></pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Abbiamo già visto che il punto, in questo caso, è poter aggiungere e togliere elementi del tipo parametrico (avendo sia la garnzia della <em>type safety</em> che evitando l'uso del <em>cast</em>).</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">li</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">li</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 <span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">li</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Inoltre, come già discusso, vale invece che se <code>G</code> $\prec$ <code>H</code>, allora per ogni <code>T</code> vale che <code>G&lt;T&gt;</code> $\prec$ <code>H&lt;T&gt;</code>, di nuovo usando una immagine dal <a href="https://dev.java/learn/generics/intro/">tutorial</a></p>
-<center><img width=240 src="https://dev.java/assets/images/generics/02_collections-inheritance.png" /></center>
-
-
+<center><img alt="No description has been provided for this image" src="https://dev.java/assets/images/generics/02_collections-inheritance.png" width="240"/></center>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Array-e-gerarchia">Array e gerarchia<a class="anchor-link" href="#Array-e-gerarchia">&#182;</a></h2><p>Si osservi che la situazione è ben <strong>diversa</strong> per gli array: è infatti vero che se <code>S</code> $\prec$ <code>T</code>, allora <code>S[]</code> $\prec$ <code>T[]</code>.</p>
-
+<h2 id="Array-e-gerarchia">Array e gerarchia<a class="anchor-link" href="#Array-e-gerarchia">¶</a></h2><p>Si osservi che la situazione è ben <strong>diversa</strong> per gli array: è infatti vero che se <code>S</code> $\prec$ <code>T</code>, allora <code>S[]</code> $\prec$ <code>T[]</code>.</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Integer</span><span class="o">[]</span><span class="w"> </span><span class="n">ai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Integer</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">Integer</span><span class="o">[]</span><span class="w"> </span><span class="n">ai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Integer</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
 <span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">ao</span><span class="p">;</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In questo caso, infatti, l'assegmaneto è possibile senza <em>cast</em> (per via della relazione di sottotipo)</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">;</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">ao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ai</span><span class="p">;</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Il fatto è che, per gli array, l'assegnamento a <code>ao</code> può essere controllato a <em>run-time</em> perché l'array conserva l'informazione circa il tipo dei suoi elementi (cosa che non accade per i tipi generici).</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ao</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">ao</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
@@ -13328,160 +13276,120 @@ div#notebook {
 <span class="ansi-red-intense-fg ansi-bold">	at .(#22:1)</span></pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>L'eccezione <code>ArrayStoreException</code> è proprio il modo in cui la VM segnala (a runtime) che è impossibile assegnare un oggetto ad un elemento di <code>as</code> (tramite l'<em>alias</em> <code>ao</code>).</p>
 <p>Ovviamente è corretto l'assegnamento</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">ao</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">ao</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[9]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>1</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>che viene eseguito senza errore.</p>
-<p>Nel caso degli array quindi la <em>type safety</em> può essee garantita anche &quot;trasportando&quot; sugli array la relazione di sottotipo dgli elementi.</p>
-
+<p>Nel caso degli array quindi la <em>type safety</em> può essee garantita anche "trasportando" sugli array la relazione di sottotipo dgli elementi.</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Metodi-generici">Metodi generici<a class="anchor-link" href="#Metodi-generici">&#182;</a></h1><p>La mancanza di relazioni di tipo tra <code>G&lt;S&gt;</code> e <code>G&lt;T&gt;</code> anche qualora <code>S</code> $\prec$ <code>T</code> è particolarmente grave non tanto per il caso degli <em>alias</em> visto in precendeza, quanto per il caso dei metodi.</p>
-<p>Supponiamo di voler scrivere il metodo <code>add</code> al quale passeremo un parametro che &quot;produca&quot; dei valori numerici di cui il metodo restiturà la somma</p>
-
+<h1 id="Metodi-generici">Metodi generici<a class="anchor-link" href="#Metodi-generici">¶</a></h1><p>La mancanza di relazioni di tipo tra <code>G&lt;S&gt;</code> e <code>G&lt;T&gt;</code> anche qualora <code>S</code> $\prec$ <code>T</code> è particolarmente grave non tanto per il caso degli <em>alias</em> visto in precendeza, quanto per il caso dei metodi.</p>
+<p>Supponiamo di voler scrivere il metodo <code>add</code> al quale passeremo un parametro che "produca" dei valori numerici di cui il metodo restiturà la somma</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Number</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Tutto bene se lo usiamo con una lista del tipo del parametro</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 <span class="n">add</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>6.5</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ma per via della mancanza della relazione di sottotipo, non possiamo usarla per sommare una lista di interi</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 <span class="n">add</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">add(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">ints</span><span class="ansi-black-intense-fg ansi-bold">);</span>
@@ -13489,166 +13397,125 @@ div#notebook {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Una possibile soluzione è rendere il metodo <strong>generico</strong> ed indicare un <strong>bound</strong> nella dichiarazione dei parametri di tipo</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>6.0</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Supponiamo ora di voler scrivere un metodo <code>copy</code> che data una lista proceda a copiare il suo contenuto in un &quot;consumatore&quot; costituito da una seconda lista</p>
-
+<p>Supponiamo ora di voler scrivere un metodo <code>copy</code> che data una lista proceda a copiare il suo contenuto in un "consumatore" costituito da una seconda lista</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">dst</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="w"> </span><span class="n">dst</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>che funziona egregiamente su coppie di liste di interi</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dupInts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dupInts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 <span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupInts</span><span class="p">);</span>
 <span class="n">dupInts</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[16]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ma che succede se volessimo copiare una lista di interi in una di numeri?</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dupNums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dupNums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 <span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">copy</span><span class="ansi-black-intense-fg ansi-bold">(ints, dupNums);</span>
@@ -13659,134 +13526,104 @@ div#notebook {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Incorreremmo di nuovo in un problema legato all'assenza di una relazione gerarchica tra i tipi; anche in questo caso, possiamo risolverlo con un <em>bound</em></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">dst</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">S</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="w"> </span><span class="n">dst</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
 <span class="n">dupNums</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[19]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>L'uso dei bound sui tipi di parametro dei metodi generici è una prima risposta al problema della mancanza di una gerarchia tra i generici.</p>
 <p>Ma è necessaria una soluzione più versatile, in grado di permetterci di dare un tipo (generico) sensato agli argomenti dei metodi.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Wildcard">Wildcard<a class="anchor-link" href="#Wildcard">&#182;</a></h1><p>Esiste un parametro di tipo <strong>wildcard</strong> <code>?</code> che intuitivamente sta per &quot;qualunque tipo&quot;, ragion per cui vale <code>G&lt;T&gt;</code> $\prec$<code>G&lt;?&gt;</code> (per ogni <code>T</code>); con un immagine tratta dal <a href="https://dev.java/learn/generics/wildcards/">tutorial</a></p>
-<center><img width=480 src="https://dev.java/assets/images/generics/04_super-types.png" /></center>
-
+<h1 id="Wildcard">Wildcard<a class="anchor-link" href="#Wildcard">¶</a></h1><p>Esiste un parametro di tipo <strong>wildcard</strong> <code>?</code> che intuitivamente sta per "qualunque tipo", ragion per cui vale <code>G&lt;T&gt;</code> $\prec$<code>G&lt;?&gt;</code> (per ogni <code>T</code>); con un immagine tratta dal <a href="https://dev.java/learn/generics/wildcards/">tutorial</a></p>
+<center><img alt="No description has been provided for this image" src="https://dev.java/assets/images/generics/04_super-types.png" width="480"/></center>
 <p>Ad esempio</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">lw</span><span class="p">;</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">List</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">lw</span><span class="p">;</span>
 
 <span class="n">lw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="p">;</span>
 <span class="n">lw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">li</span><span class="p">;</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Il problema è che in questo modo non è possibile garantire alcuna <em>type safety</em>, infatti non c'è verso di scrivere nella lista</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">lw</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">lw</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">lw.add(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">Integer.valueOf(1)</span><span class="ansi-black-intense-fg ansi-bold">);</span>
@@ -13794,32 +13631,23 @@ div#notebook {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">lw</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">());</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">lw</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">());</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">lw.add(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">new Object()</span><span class="ansi-black-intense-fg ansi-bold">);</span>
@@ -13827,40 +13655,30 @@ div#notebook {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Anche la lettura non può essere fatta in modo <em>type safe</em></p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lw</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">Integer</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lw</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">Integer i = </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">lw.get(1)</span><span class="ansi-black-intense-fg ansi-bold">;</span>
@@ -13868,136 +13686,104 @@ div#notebook {
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ma se l'obiettivo è solo recuperare un elemento, si può fare a patto di usare <code>Object</code> come tipo d'ultima istanza</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lw</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lw</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Tale &quot;libertà&quot; può essere vincolata in vario modo, così che abbia senso usare tipi parametrici basati su wildcard.</p>
-<h2 id="Upper-bound">Upper bound<a class="anchor-link" href="#Upper-bound">&#182;</a></h2><p>Il caso più semplice è quello degli <strong>upper bound</strong> della forma <code>? extends T</code> che consentono di introdurre le seguenti relazione di sottotipo (fissato <code>G</code>):</p>
+<p>Tale "libertà" può essere vincolata in vario modo, così che abbia senso usare tipi parametrici basati su wildcard.</p>
+<h2 id="Upper-bound">Upper bound<a class="anchor-link" href="#Upper-bound">¶</a></h2><p>Il caso più semplice è quello degli <strong>upper bound</strong> della forma <code>? extends T</code> che consentono di introdurre le seguenti relazione di sottotipo (fissato <code>G</code>):</p>
 <ul>
 <li>per ogni <code>T</code>, <code>G&lt;T&gt;</code> $\prec$ <code>G&lt;? extends T&gt;</code></li>
 <li>se <code>S</code> $\prec$ <code>T</code>, allora <code>G&lt;? extends S&gt;</code> $\prec$  <code>G&lt;? extends T&gt;</code>.</li>
 </ul>
 <p>Ragionando per transitività, se <code>S</code> $\prec$ <code>T</code>, si ha <code>G&lt;S&gt;</code> $\prec$ <code>G&lt;? extends T&gt;</code> che, in somma, permette di concludere che il generico basato sull'<em>upper bound del supertipo</em> (<code>G&lt;? extends T&gt;</code>) è supertipo sia di <code>G&lt;S&gt;</code> che di <code>G&lt;T&gt;</code> (che pure sono tra loro inconfrontabili dal punto di vista della gerarchia).</p>
-<h3 id="Esempio:-produttore">Esempio: produttore<a class="anchor-link" href="#Esempio:-produttore">&#182;</a></h3><p>Un esempio d'uso può chiarire l'obiettivo di tali bound. Immaginiamo di avere un metodo in grado di operare su oggetti di tipo <code>T</code> prodotti da una lista; esso potrà riceverne una di tipo <code>List&lt;T&gt;</code> ma, certamente, anche <code>List&lt;S&gt;</code> (se <code>S</code> $\prec$ <code>T</code>); per questa ragione ha senso che il tipo del sua parametro sia <code>List&lt;? extends T&gt;</code>.</p>
+<h3 id="Esempio:-produttore">Esempio: produttore<a class="anchor-link" href="#Esempio:-produttore">¶</a></h3><p>Un esempio d'uso può chiarire l'obiettivo di tali bound. Immaginiamo di avere un metodo in grado di operare su oggetti di tipo <code>T</code> prodotti da una lista; esso potrà riceverne una di tipo <code>List&lt;T&gt;</code> ma, certamente, anche <code>List&lt;S&gt;</code> (se <code>S</code> $\prec$ <code>T</code>); per questa ragione ha senso che il tipo del sua parametro sia <code>List&lt;? extends T&gt;</code>.</p>
 <p>Ad esempio, consideriamo il metodo <code>add</code> visto in precedenza: a questo punto ha senso abbia un parametro di tipo <code>List&lt;? extends Number&gt;</code> che è supertipo di <code>List&lt;Integer&gt;</code> e <code>List&lt;Double&gt;</code>.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In [25]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Number</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Number</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In [26]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">ints</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[26]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>6.0</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In [27]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[27]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>6.5</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Il parametro del metodo <code>add</code> viene chiamato <strong>produttore</strong> perché produce i valori adoperati dal metodo, se esso è in grado di gestire il tipo <code>Number</code> sarà in grado di gestire i sottotipi. Il produttore, quindi, deve emettere elementi <em>al più</em> di un certo tipo, per questa ragione il suo parametro ha un <em>upper bound</em>.</p>
-<h2 id="Lower-bound">Lower bound<a class="anchor-link" href="#Lower-bound">&#182;</a></h2><p>Immaginiamo ora di avere un metodo in grado di consumare oggetti di tipo <code>T</code> da immagazzinare in una lista, che tipo dovrebbe avere quest'ultima? Non possiamo seguire il ragionamento precedente: volendo aggiungere valori di tipo <code>T</code> non possiamo farlo in una lista di tipo <code>List&lt;? extends T&gt;</code>, perché sappiamo che se <code>S</code> $\prec$ <code>T</code> ad essa può corrispondere anche una <code>List&lt;S&gt;</code> e finiremmo col mettere oggetti del supertipo in una lista di sottotipi! Vorremmo scrivere una cosa del tipo <code>T extends ?</code>, ma questo non è sintatticamente ammesso.</p>
+<h2 id="Lower-bound">Lower bound<a class="anchor-link" href="#Lower-bound">¶</a></h2><p>Immaginiamo ora di avere un metodo in grado di consumare oggetti di tipo <code>T</code> da immagazzinare in una lista, che tipo dovrebbe avere quest'ultima? Non possiamo seguire il ragionamento precedente: volendo aggiungere valori di tipo <code>T</code> non possiamo farlo in una lista di tipo <code>List&lt;? extends T&gt;</code>, perché sappiamo che se <code>S</code> $\prec$ <code>T</code> ad essa può corrispondere anche una <code>List&lt;S&gt;</code> e finiremmo col mettere oggetti del supertipo in una lista di sottotipi! Vorremmo scrivere una cosa del tipo <code>T extends ?</code>, ma questo non è sintatticamente ammesso.</p>
 <p>A tal fine vengono invece introdotti i <strong>lower bound</strong> della forma <code>? super S</code> che consentono di introdurre le seguenti relazioni di sottotipo</p>
 <ul>
 <li>per ogni <code>T</code>, <code>G&lt;T&gt;</code> $\prec$ <code>G&lt;? super T&gt;</code></li>
@@ -14005,215 +13791,152 @@ div#notebook {
 </ul>
 <p>si osservi che, nella seconda relazione, l'ordine dei generici è rovesciato rispetto a prima.</p>
 <p>Ragionando per transitività, se <code>S</code> $\prec$ <code>T</code>, si ha <code>G&lt;T&gt;</code> $\prec$ <code>G&lt;? super S&gt;</code> che, in somma, permette di concludere che: il generico basato sul <em>lower bound del sottotipo</em> (<code>G&lt;? super S&gt;</code>) è supertipo sia di <code>G&lt;S&gt;</code> che di <code>G&lt;T&gt;</code>.</p>
-<h3 id="Esempio:-consumatore">Esempio: consumatore<a class="anchor-link" href="#Esempio:-consumatore">&#182;</a></h3><p>Ad esempio, consideriamo di nuovo il metodo <code>copy</code> visto in precedenza. L'unico vincolo in questo caso è che il consumatore di elementi (estratti dalla lista di <code>T</code>) sia una <code>List&lt;? super T&gt;</code> (che è supertipo di <code>List&lt;T&gt;</code>) in grado di ricevere elementi di tipo <code>T</code>.</p>
-
+<h3 id="Esempio:-consumatore">Esempio: consumatore<a class="anchor-link" href="#Esempio:-consumatore">¶</a></h3><p>Ad esempio, consideriamo di nuovo il metodo <code>copy</code> visto in precedenza. L'unico vincolo in questo caso è che il consumatore di elementi (estratti dalla lista di <code>T</code>) sia una <code>List&lt;? super T&gt;</code> (che è supertipo di <code>List&lt;T&gt;</code>) in grado di ricevere elementi di tipo <code>T</code>.</p>
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In [28]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">dst</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="w"> </span><span class="n">dst</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In [29]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupInts</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupInts</span><span class="p">);</span>
 <span class="n">dupInts</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[29]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In [30]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
 <span class="n">dupNums</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[30]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Il secondo parametro del metodo <code>copy</code> viene chiamato <strong>consumatore</strong> perché riceve o valori dalla (prima) lista.</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Si osservi inoltre che con le <em>wildcard</em> è possibile anche restringere il tipo della prima lista, ad esempio ad <code>Integer</code>, in questo modo non è nemmeno necessario che il metodo sia generico</p>
-
 </div>
 </div>
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In [31]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;?</span><span class="w"> </span><span class="kd">super</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">dst</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">src</span><span class="p">)</span><span class="w"> </span><span class="n">dst</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupInts</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupInts</span><span class="p">);</span>
 <span class="n">dupInts</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[32]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[32]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing code_cell rendered">
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In [33]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
+<div class="input_area">
+<div class="highlight hl-java"><pre><span></span><span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span><span class="w"> </span><span class="n">dupNums</span><span class="p">);</span>
 <span class="n">dupNums</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
-
-
-
+<div class="prompt output_prompt">Out[33]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>[1, 2, 3]</pre>
 </div>
-
-</div>
-
 </div>
 </div>
-
 </div>
-<div  class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Due-schemi-riassuntivi">Due schemi riassuntivi<a class="anchor-link" href="#Due-schemi-riassuntivi">&#182;</a></h2><p>Una bella immagine di <a href="https://stackoverflow.com/users/2707792/andrey-tyukin">Andrey Tyukin</a> può aiutare a riflettere sulle relazioni tra tipo e le nozioni di produttore e consumatore.</p>
-<p><img src="https://i.stack.imgur.com/KjDLw.png" alt="" /></p>
+<h2 id="Due-schemi-riassuntivi">Due schemi riassuntivi<a class="anchor-link" href="#Due-schemi-riassuntivi">¶</a></h2><p>Una bella immagine di <a href="https://stackoverflow.com/users/2707792/andrey-tyukin">Andrey Tyukin</a> può aiutare a riflettere sulle relazioni tra tipo e le nozioni di produttore e consumatore.</p>
+<p><img alt="" src="https://i.stack.imgur.com/KjDLw.png"/></p>
 <p>Per finire, una immagine tratta dal <a href="https://dev.java/learn/generics/wildcards/">tutorial</a> può aiutare a ricordare l'ordine indotto da queste relazioni</p>
-<center><img width=600 src="https://dev.java/assets/images/generics/05_lists-declarations.png" /></center>
-
-
+<center><img alt="No description has been provided for this image" src="https://dev.java/assets/images/generics/05_lists-declarations.png" width="600"/></center>
 </div>
 </div>
 </div>
-    </div>
-  </div>
+</div>
+</div>
+</main>
 </body>
-
-
-
-
-
-
-
 <link href="custom.css" rel="stylesheet"></html>
