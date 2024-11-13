@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gradle spotlessApply build
+./gradlew spotlessApply build
 mkdir -p ./docs
 for g in notes/*.ipynb; do
   note=$(basename $g .ipynb)

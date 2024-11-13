@@ -1,13 +1,19 @@
 plugins {
   id 'java'
-  id "com.diffplug.spotless" version "5.16.0"
-  id 'jacoco'
-  id 'eclipse'
+  id 'com.diffplug.spotless' version '6.25.0'
 }
 
-defaultTasks 'spotlessApply', 'build', 'jacocoTestReport'
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 
 repositories {
+  mavenLocal()
   mavenCentral()
 }
 
@@ -21,82 +27,62 @@ sourceSets {
 
 configurations {
   scratchImplementation.extendsFrom implementation
-  scratchImplementation.setCanBeResolved(true)
   scratchRuntimeOnly.extendsFrom runtimeOnly
-  umlDoclet
 }
 
 dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
-  testImplementation 'org.hamcrest:hamcrest:2.2'
-  umlDoclet 'nl.talsmasoftware:umldoclet:2.0.12'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-eclipse {
-  classpath {
-    plusConfigurations += [ configurations.scratchImplementation ]
-  }
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+  options.compilerArgs.add('-Xlint:all')
+  options.compilerArgs.add('-Werror') 
 }
 
-test {
-  useJUnitPlatform {
-    if (project.hasProperty("tags")) {
-        includeTags project.tags
+tasks.named('test') {
+  useJUnitPlatform()
+  testLogging {
+    events 'skipped', 'failed'
+    afterSuite { desc, result ->
+      if (!desc.parent) {
+        println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+      }
     }
   }
-  testLogging {
-    events 'passed', 'skipped', 'failed'
-  }
-  finalizedBy jacocoTestReport
+  defaultCharacterEncoding = 'UTF-8'
 }
 
-task runClass(type: JavaExec) {
-  dependsOn build
-  group = 'Execution'
-  description = 'Runs the main method of a class given by its fully qualified name.'
-  mainClass = project.hasProperty('mainClass') ? getProperty('mainClass') : 'my.pkg.Example'
-  classpath = sourceSets.main.runtimeClasspath + sourceSets.scratch.runtimeClasspath
+tasks.withType(JavaExec) {
+  enableAssertions = project.hasProperty('enableAssertions') ? project.getProperty('enableAssertions') : false
 }
 
 javadoc {
-  options.docTitle = 'Programmazione II @ UniMI'
-  options.overview = 'src/overview.html'
-  options.links = [ 'https://docs.oracle.com/en/java/javase/17/docs/api/' ]
-  options.showFromPrivate()
-  options.header = '<script type=\'text/javascript\' src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\'></script>'
-  options.addBooleanOption('-allow-script-in-comments', true)
-  javadoc.options.addStringOption('Xdoclint:none', '-quiet')
-}
-
-task UMLJavadoc(type: Javadoc) {
-  group = 'Documentation'
-  description = 'Generates Javadoc API documentation and UML diagrams for the main source code.'
-  source = sourceSets.main.allJava
-  classpath = sourceSets.main.compileClasspath
-  destinationDir = file("${buildDir}/docs/umljavadoc")
-  options.showFromPrivate()
-  options.docletpath = configurations.umlDoclet.files.asType(List)
-  options.doclet = 'nl.talsmasoftware.umldoclet.UMLDoclet'
-  options.addStringOption 'umlImageDirectory', 'images'
-  options.addStringOption 'umlImageFormat', 'svg,png'
+  exclude('utils/**', 'clients/**')
+  options {
+    description = 'Generates Javadoc API documentation and UML diagrams for the main source code.'
+    encoding = 'UTF-8'
+    charSet = 'UTF-8'
+    links = [ 'https://docs.oracle.com/en/java/javase/21/docs/api/' ]
+    docTitle = 'Programmazione II @ UniMI'
+    overview = 'src/overview.html'
+    header = '<script type=\'text/javascript\' src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\'></script>'
+    showFromPrivate()
+    addBooleanOption 'Xdoclint:all', true
+    // addBooleanOption 'Werror', true
+    addBooleanOption '-allow-script-in-comments', true
+  }
 }
 
 spotless {
   enforceCheck false
   java {
-    googleJavaFormat('1.11.0')
+    googleJavaFormat('1.24.0')
     removeUnusedImports()
-    /* indentWithTabs(2) see https://github.com/diffplug/spotless/issues/317 */
     indentWithSpaces(2)
     endWithNewline()
     licenseHeaderFile 'src/licenseHeaderFile.txt'
   }
 }
 
-jacocoTestReport {
-    afterEvaluate {
-        classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ['**/Main*'])
-        }))
-    }
-}

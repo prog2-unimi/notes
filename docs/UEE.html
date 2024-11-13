@@ -13412,8 +13412,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="output">
 <div class="output_area">
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>true
-false
+<pre>Exception in thread "main" java.lang.NoClassDefFoundError: it/unimi/di/prog2/notes/uee/sym/S
+	at it.unimi.di.prog2.notes.uee.MainSym.main(MainSym.java:34)
+Caused by: java.lang.ClassNotFoundException: it.unimi.di.prog2.notes.uee.sym.S
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 1 more
 </pre>
 </div>
 </div>
@@ -13633,9 +13638,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="output">
 <div class="output_area">
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>true
-true
-false
+<pre>Exception in thread "main" java.lang.NoClassDefFoundError: it/unimi/di/prog2/notes/uee/trans/S
+	at it.unimi.di.prog2.notes.uee.MainTrans.main(MainTrans.java:34)
+Caused by: java.lang.ClassNotFoundException: it.unimi.di.prog2.notes.uee.trans.S
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 1 more
 </pre>
 </div>
 </div>
@@ -14145,10 +14154,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="output">
 <div class="output_area">
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>false
-false
-true
-false
+<pre>Error: Unable to initialize main class it.unimi.di.prog2.notes.uee.MainLSP
+Caused by: java.lang.NoClassDefFoundError: it/unimi/di/prog2/notes/uee/lsp/T
 </pre>
 </div>
 </div>
