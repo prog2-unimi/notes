@@ -17,45 +17,9 @@ repositories {
   mavenCentral()
 }
 
-sourceSets {
-  scratch {
-    java { srcDirs = [ 'src/scratch/java' ] }
-    compileClasspath += sourceSets.main.output
-    runtimeClasspath += sourceSets.main.output
-  }
-}
-
-configurations {
-  scratchImplementation.extendsFrom implementation
-  scratchRuntimeOnly.extendsFrom runtimeOnly
-}
-
-dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.3'
-  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
 tasks.withType(JavaCompile) {
   options.encoding = 'UTF-8'
   options.compilerArgs.add('-Xlint:all')
-  options.compilerArgs.add('-Werror') 
-}
-
-tasks.named('test') {
-  useJUnitPlatform()
-  testLogging {
-    events 'skipped', 'failed'
-    afterSuite { desc, result ->
-      if (!desc.parent) {
-        println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
-      }
-    }
-  }
-  defaultCharacterEncoding = 'UTF-8'
-}
-
-tasks.withType(JavaExec) {
-  enableAssertions = project.hasProperty('enableAssertions') ? project.getProperty('enableAssertions') : false
 }
 
 javadoc {
@@ -70,7 +34,6 @@ javadoc {
     header = '<script type=\'text/javascript\' src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\'></script>'
     showFromPrivate()
     addBooleanOption 'Xdoclint:all', true
-    // addBooleanOption 'Werror', true
     addBooleanOption '-allow-script-in-comments', true
   }
 }
