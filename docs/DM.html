@@ -13178,7 +13178,7 @@ div#notebook {
 <div class="input_area">
 <div class="highlight hl-java"><pre><span></span><span class="n">Overload</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Overload</span><span class="p">();</span>
 <span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1.0 è un double, nessuna conversione</span>
+<span class="n">o</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1.0 è un double, nessuna conversione</span>
 </pre></div>
 </div>
 </div>
@@ -13814,7 +13814,9 @@ div#notebook {
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-java"><pre><span></span><span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+<div class="highlight hl-java"><pre><span></span><span class="n">Above</span><span class="w"> </span><span class="n">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Below</span><span class="p">();</span>
+
+<span class="n">ab</span><span class="p">.</span><span class="na">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -13824,7 +13826,7 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Below::f(double)
+<pre>Above::f(double)
 </pre>
 </div>
 </div>
@@ -13853,7 +13855,7 @@ div#notebook {
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Below::f(double)
+<pre>Above::f(double)
 </pre>
 </div>
 </div>
