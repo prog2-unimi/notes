@@ -33,11 +33,9 @@ public class T {
     this.a = a;
   }
 
-  public boolean equals(Object o) {
-    if (o instanceof T) {
-      final T t = (T) o;
-      return a == t.a;
-    }
+  public boolean equals(Object obj) {
+    if (obj instanceof T other) 
+      return a == other.a;
     return false;
   }
 }

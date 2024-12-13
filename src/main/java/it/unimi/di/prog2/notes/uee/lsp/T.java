@@ -33,9 +33,10 @@ public class T {
     this.a = a;
   }
 
-  public boolean equals(Object o) {
-    if (getClass() == o.getClass()) {
-      final T t = (T) o;
+  public boolean equals(Object obj) {
+    if (obj==null) return false;
+    if (getClass() == obj.getClass()) {
+      final T t = (T) obj;
       return a == t.a;
     }
     return false;

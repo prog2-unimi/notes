@@ -34,10 +34,11 @@ public class S extends T {
     this.b = b;
   }
 
-  public boolean equals(Object o) {
-    if (getClass() == o.getClass()) {
-      final S s = (S) o;
-      return super.equals(o) && b == s.b;
+  public boolean equals(Object obj) {
+    if (obj==null) return false;
+    if (getClass() == obj.getClass()) {
+      final S s = (S) obj;
+      return super.equals(obj) && b == s.b;
     }
     return false;
   }
