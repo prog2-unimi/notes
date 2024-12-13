@@ -34,7 +34,7 @@ public class T {
   }
 
   public boolean equals(Object obj) {
-    if (obj==null) return false;
+    if (obj == null) return false;
     if (getClass() == obj.getClass()) {
       final T t = (T) obj;
       return a == t.a;

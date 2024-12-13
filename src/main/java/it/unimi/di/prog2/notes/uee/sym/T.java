@@ -34,8 +34,7 @@ public class T {
   }
 
   public boolean equals(Object obj) {
-    if (obj instanceof T other) 
-      return a == other.a;
+    if (obj instanceof T other) return a == other.a;
     return false;
   }
 }

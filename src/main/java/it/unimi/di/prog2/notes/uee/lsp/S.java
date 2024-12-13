@@ -35,7 +35,7 @@ public class S extends T {
   }
 
   public boolean equals(Object obj) {
-    if (obj==null) return false;
+    if (obj == null) return false;
     if (getClass() == obj.getClass()) {
       final S s = (S) obj;
       return super.equals(obj) && b == s.b;
