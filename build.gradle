@@ -1,51 +1,67 @@
 plugins {
   id 'java'
-  id 'com.diffplug.spotless' version '6.25.0'
+  id 'com.diffplug.spotless' version '8.0.0'
 }
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(21)
+    languageVersion = JavaLanguageVersion.of(25)
   }
 }
-
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = 'UTF-8'
 
 repositories {
   mavenLocal()
   mavenCentral()
 }
 
-tasks.withType(JavaCompile) {
-  options.encoding = 'UTF-8'
-  options.compilerArgs.add('-Xlint:all')
+configurations {
+  umlDoclet
 }
 
-javadoc {
+dependencies {
+  umlDoclet 'nl.talsmasoftware:umldoclet:2.2.3'
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+  options.compilerArgs += ['-Xlint:all', '-Werror']
+}
+
+tasks.withType(JavaExec).configureEach {
+  systemProperty 'user.language', 'ROOT'
+  systemProperty 'file.encoding', 'UTF-8'
+  defaultCharacterEncoding = 'UTF-8'
+  classpath += sourceSets.scratch.runtimeClasspath
+  enableAssertions = !providers.gradleProperty('disableAssertions').isPresent()
+}
+
+tasks.named('javadoc', Javadoc) {
   exclude('utils/**', 'clients/**')
   options {
     description = 'Generates Javadoc API documentation and UML diagrams for the main source code.'
     encoding = 'UTF-8'
     charSet = 'UTF-8'
-    links = [ 'https://docs.oracle.com/en/java/javase/21/docs/api/' ]
+    links = [ 'https://docs.oracle.com/en/java/javase/25/docs/api/' ]
     docTitle = 'Programmazione II @ UniMI'
     overview = 'src/overview.html'
-    header = '<script type=\'text/javascript\' src=\'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\'></script>'
+    header = "<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>"
+    doclet = 'nl.talsmasoftware.umldoclet.UMLDoclet'
+    docletpath = configurations.umlDoclet.files.asType(List)
     showFromPrivate()
-    addBooleanOption 'Xdoclint:all', true
-    addBooleanOption '-allow-script-in-comments', true
+    addBooleanOption('Xdoclint:all', true)
+    addBooleanOption('Werror', true)
+    addBooleanOption('-allow-script-in-comments', true)
   }
 }
 
 spotless {
-  enforceCheck false
+  enforceCheck = false
   java {
-    googleJavaFormat('1.24.0')
+    googleJavaFormat('1.28.0')
     removeUnusedImports()
-    indentWithSpaces(2)
+    leadingTabsToSpaces(2)
     endWithNewline()
-    licenseHeaderFile 'src/licenseHeaderFile.txt'
+    licenseHeaderFile('src/licenseHeaderFile.txt')
   }
 }
 
