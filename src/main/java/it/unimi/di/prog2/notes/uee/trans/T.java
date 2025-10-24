@@ -33,6 +33,10 @@ public class T {
     this.a = a;
   }
 
+  public int hashCode() {
+    return Integer.hashCode(a);
+  }
+
   public boolean equals(Object obj) {
     if (obj instanceof T other) return a == other.a;
     return false;
