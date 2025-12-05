@@ -42,7 +42,7 @@ tasks.named('javadoc', Javadoc) {
     encoding = 'UTF-8'
     charSet = 'UTF-8'
     links = [ 'https://docs.oracle.com/en/java/javase/25/docs/api/' ]
-    docTitle = 'Programmazione II @ UniMI'
+    docTitle = 'Note di Programmazione II @ UniMI'
     overview = 'src/overview.html'
     header = "<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>"
     doclet = 'nl.talsmasoftware.umldoclet.UMLDoclet'

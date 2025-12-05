@@ -7,10 +7,9 @@ for g in notes/*.ipynb; do
   if [ $note = Test ]; then continue; fi
   echo "Converting $note..."
   if grep -q '"mimetype": "text/x-java-source"' "./notes/${note}.ipynb"; then
-    jupyter nbconvert --execute --ExecutePreprocessor.allow_errors=True --to html "./notes/${note}.ipynb" --template classic
+    jupyter nbconvert --execute --ExecutePreprocessor.allow_errors=True --to html "./notes/${note}.ipynb"
   else
-    jupyter nbconvert --execute --no-prompt --no-input --to html "./notes/${note}.ipynb" --template classic
+    jupyter nbconvert --execute --no-prompt --no-input --to html "./notes/${note}.ipynb"
   fi
-  sed -i -e 's|</html>|<link href="custom.css" rel="stylesheet"></html>|' "./notes/${note}.html"
   mv -f "./notes/${note}.html" ./docs
 done
